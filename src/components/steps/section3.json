@@ -1,0 +1,37 @@
+{
+  "step": 3,
+  "heading": "Section 3: Kojima Information",
+  "subheading": "Kojima character names reflect his own idiosyncrasies. He can’t help himself.",
+  "data": [
+    {
+      "order": "16.",
+      "prompt": "Who is your favorite film character? (NOTE: must be played by Kurt Russell)",
+      "long": false
+    },
+    {
+      "order": "17.",
+      "prompt": "What is the last word of the title of your favorite Kubrick film?"
+    },
+    {
+      "order": "18.",
+      "prompt": "What is the first word in the title of your favorite Joy Division album?"
+    },
+    {
+      "order": "19.",
+      "prompt": "What is a scientific term you picked up from listening to NPR once?"
+    },
+    {
+      "order": "20.",
+      "prompt": "What is a piece of military hardware you think looks cool even though war is bad?"
+    },
+    {
+      "order": "21.",
+      "prompt": "What is something you’d enjoy watching Mads Mikkelsen do?",
+      "long": true
+    },
+    {
+      "order": "21.",
+      "prompt": "Please condense into one word."
+    }
+  ]
+}
