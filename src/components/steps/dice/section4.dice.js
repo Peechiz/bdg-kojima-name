@@ -1,5 +1,5 @@
-import Dice from '../../util/dice'
-import json from './section4.json'
+import Dice from '../../../util/dice'
+import json from '../data/section4.json'
 
 const getTable = (order) => json.data.find(q => q.order === order).table;
 

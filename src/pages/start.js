@@ -13,21 +13,23 @@ const Start = () => {
     <h1 className="text-center w-screen font-sans">BDG's Kojima-Name Generator</h1>
     {
       die === null ?
-      <div>
-        <p>Roll a die to see how many names you have</p>
-        <ul>
+      <div className="flex flex-col align-center">
+        <p className="text-center">Roll a die to see how many names you have</p>
+        <ul className="text-center">
           <li>1-5: You have 1 name</li>
           <li>6: You have 6 names</li>
         </ul>
         <button
+          className="px-8 text-3xl my-3"
           onClick={ () => setDie(d6()) }
         >Roll</button>
       </div>
       :
-      <div className="">
-        <h1>You rolled a {yolo && "\""}{die}{yolo && "\""}, you have { die < 6 ? 1 : 6} Kojima-names.</h1>
+      <div className="flex flex-col align-center">
+        <h1 className="text-center">You rolled a {yolo && "\""}{die}{yolo && "\""}, you have { die < 6 ? 1 : 6} Kojima-names.</h1>
         { die < 6 && 
           <button
+            className="text-3xl my-3"
             onClick={() => {
               setDie(6);
               setYolo(true);
@@ -35,13 +37,15 @@ const Start = () => {
           >Fuck that, I totally have 6 names</button>
         }
         { yolo &&
-          <p>ok whatever</p>
+          <p className="text-center">ok whatever</p>
         }
-        <Link to={{
+        <Link 
+          className="flex justify-center text-3xl my-3"
+          to={{
           pathname: `/worksheet/2`,
           state: { roll: die }
         }} >
-          <button>Let's do this</button>
+          <button >Let's do this</button>
         </Link>
       </div>
     }

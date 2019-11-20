@@ -1,0 +1,22 @@
+{
+  "step": 5,
+  "heading": "Section 5: Determining Your Name Category",
+  "subheading": "Kojima names fall into a finite number of categories. This section will determine the category in which you name belongs. NOTE: If you have a name + 6 alternate names, you will do this section once to find your true name, and then you will have an alternate name in every other category.",
+  "data": [
+    {
+      "order": "5.",
+      "prompt": "Roll a d20 to determine your name category. Once you have figured out your name category, you can skip ahead to the section that outlines the rules of your name",
+      "die": "d20",
+      "type": "die",
+      "table": [
+        ["1", "You have a NORMAL NAME (See Section 6)"],
+        ["2-6", "You have an OCCUPATIONAL NAME (See Section 7)"],
+        ["7-10", "You have a HORNY NAME (See Section 8)"],
+        ["11-13", "You have a THE NAME (See Section 9)"],
+        ["14­-17", "You have a COOL NAME (See Section 10)"],
+        ["18-19", "You have a VIOLENT NAME (See Section 11)"],
+        ["20", "You have a NAME THAT LACKS SUBTEXT (See Section 12)"]
+      ]
+    }
+  ]
+}

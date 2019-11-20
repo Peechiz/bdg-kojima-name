@@ -620,6 +620,7 @@ button {
   padding-left: 1rem;
   padding-right: 1rem;
   border-radius: 0.25rem;
+  margin: auto;
 }
 
 button:hover {

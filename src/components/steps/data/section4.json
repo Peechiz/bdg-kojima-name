@@ -8,6 +8,7 @@
       "prompt": "THE ­MAN CONDITION",
       "subPrompt": "Roll a d4 to determine whether you have this condition.",
       "die": "d4",
+      "type": "die",
       "table": [
         ["1-3", "You do not have this condition"],
         ["4", "You have this condition. Your last name will include the suffix ­man. If your name already has ­man at the end of it, I guess you’re just going to have ­manman at the end of your name."]
@@ -18,6 +19,7 @@
       "prompt": "THE CONDITION CONDITION",
       "subPrompt": "Roll a d8 to determine what this condition will do to you.",
       "die": "d8",
+      "type": "die",
       "table": [
         ["1-5", "You do not have this condition"],
         ["6", "You’re big. Your name must have “Big” at the beginning of it."],
@@ -30,6 +32,7 @@
       "prompt": "THE CLONE CONDITION",
       "subPrompt": "Roll a d12 to determine if you have this condition.",
       "die": "d12",
+      "type": "die",
       "table": [
         ["1-11", "You do not have this condition"],
         ["12", "You are a clone of someone else, or you have been brainwashed into becoming a mental doppelganger of someone else. Find someone who has completed this worksheet and replace 50% of your Kojima name with 50% of their Kojima name."]
@@ -40,6 +43,7 @@
       "prompt": "THE KOJIMA CONDITION",
       "subPrompt": "Roll a d100 to determine if you have this condition.",
       "die": "d100",
+      "type": "die",
       "table": [
         ["1-68, 70-100", "You do not have this condition"],
         ["69", "Oh no. You are Hideo Kojima. Hideo Kojima created you and is also you. You are the man who created himself and there is nothing you can do about it. You’re in Kojima’s world—your world—and that’s just the breaks, pal. Stop filling out this form now. You’re Hideo Kojima. Go do the things that Hideo Kojima does."]

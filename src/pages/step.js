@@ -1,10 +1,5 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
-import {
-  Section2,
-  Section3,
-  Section4
-} from '../components/steps'
+import Sections from '../components/steps'
 
 export const stepData = [
   {
@@ -23,27 +18,20 @@ export const stepData = [
     section: 5,
     text: "Determining Your Name Category"
   },
-  {
-    section: 6,
-    text: "NORMAL NAME"
-  },
-  {
-    section: 7,
-    text: "OCCUPATIONAL NAME"
-  },
+  // {
+  //   section: 6,
+  //   text: "NORMAL NAME"
+  // },
+  // {
+  //   section: 7,
+  //   text: "OCCUPATIONAL NAME"
+  // },
 ]
 
 const Steps = () => {
   let { step } = useParams();
 
-  switch (step) {
-    case '2':
-      return <Section2 />;
-    case '3':
-      return <Section3 />;
-    case '4':
-      return <Section4 />;
-  }
+  return Sections[step]();
 }
 
 export default Steps;

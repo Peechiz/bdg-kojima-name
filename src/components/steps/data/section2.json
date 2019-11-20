@@ -1,0 +1,92 @@
+{
+  "step": 2,
+  "heading": "Section 2: Personal Information",
+  "subheading": "Kojima’s characters have names that are directly related to their own character traits. This information will make sure your name fits your personality.",
+  "data": [
+    {
+      "order": "1.",
+      "prompt": "What is your full name?",
+      "type": "text"
+    },
+    {
+      "order": "2.",
+      "prompt": "What do you do at your occupation?",
+      "type": "text"
+    },
+    {
+      "order": "2a.",
+      "prompt": "Condense the verb in your answer into a single ­er noun. (e.g. if you are a sheep farmer, your answer will be “farmer”)",
+      "type": "text"
+    },
+    {
+      "order": "3.",
+      "prompt": "What was your first pet’s specific species/breed? If you never had a pet, please answer with an animal you wish you owned.",
+      "type": "text"
+    },
+    {
+      "order": "4.",
+      "prompt": "What’s your most embarrassing childhood memory? Be specific.",
+      "type": "long"
+    },
+    {
+      "order": "4a.",
+      "prompt": "Condense this story into two words.",
+      "type": "text"
+    },
+    {
+      "order": "5.",
+      "prompt": "What is the object you’d least like to be stabbed by?",
+      "type": "text"
+    },
+    {
+      "order": "6.",
+      "prompt": "What is something you are good at? (Verb ending in ­ing)",
+      "type": "text"
+    },
+    {
+      "order": "7.",
+      "prompt": "How many carrots do you believe you could eat in one sitting, if someone, like, forced you to eat as many carrots as possible?",
+      "type": "text"
+    },
+    {
+      "order": "8.",
+      "prompt": "What is your greatest intangible fear? (e.g. death, loneliness, fear itself)",
+      "type": "text"
+    },
+    {
+      "order": "9.",
+      "prompt": "What is your greatest tangible fear? (e.g. horses)",
+      "type": "text"
+    },
+    {
+      "order": "10.",
+      "prompt": "What is the last thing you did before starting this form?",
+      "type": "text"
+    },
+    {
+      "order": "11.",
+      "prompt": "What condition is your body currently in? (single word answer)",
+      "type": "text"
+    },
+    {
+      "order": "12.",
+      "prompt": "Favorite state of matter?",
+      "type": "text"
+    },
+    {
+      "order": "13.",
+      "prompt": "A word your name kind of sounds like? (e.g. Brian ­> Brain)",
+      "type": "text"
+    },
+    {
+      "order": "14.",
+      "prompt": "What is your Zodiac sign?",
+      "type": "text"
+    },
+    {
+      "order": "15.",
+      "prompt": "If you had to define your personality in one word, what would it be?",
+      "type": "text"
+    }
+  ]
+}

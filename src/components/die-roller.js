@@ -1,9 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { answerQuestionAction } from '../state/store'
+import { Store } from '../state/store'
 
-const DieRoller = ({ die, tableText, diceBag, prompt, subPrompt }) => {
-  const [rollOutcome, setRollOutcome] = useState(null);
-  const [rollResult, setRollResult] = useState();
+const DieRoller = ({
+  section,
+  qID,
+  die,
+  tableText,
+  diceBag,
+  prompt,
+  subPrompt
+}) => {
+  const { state, dispatch } = React.useContext(Store);
+
+  const sectionState = state.sections.find(s => s.order === section)
+  const { answer, roll} = sectionState.answers[qID]
   const [showTable, setShowTable] = useState(false)
+
+  useEffect(() => {
+    if (sectionState.answers.every(q => q.answer !== '')) {
+      dispatch({
+        type: 'SECTION_DONE',
+        section: section
+      })
+    }
+  }, [...sectionState.answers.map(q => q.answer)])
+
   return (
     <>
       <p>
@@ -30,24 +52,32 @@ const DieRoller = ({ die, tableText, diceBag, prompt, subPrompt }) => {
           </tbody>
         </table>
       }
-      { rollOutcome === null && 
+      { answer === '' && 
         <button
           className="m-3 max-w-xs"
           onClick={ () => {
-            const [result, outcome] = diceBag.outcome()
-            setRollOutcome(outcome);
-            setRollResult(result);
+            const [dieRoll, outcome] = diceBag.outcome()
+            answerQuestionAction({
+              section,
+              dispatch,
+              index: qID,
+              answer: {
+                type: 'die',
+                roll: dieRoll,
+                answer: outcome
+              },
+            })
           }}>
             Roll a {die}
         </button>
       }
       {
-        rollOutcome !== null &&
+        answer !== '' &&
         <div className="mt-3">
-          <p className="font-bold text-lg">You rolled a { rollResult }</p>
+          <p className="font-bold text-lg">You rolled a { roll }</p>
           <p>
             <span className="font-bold">Result</span>
-            : { rollOutcome }
+            : { answer }
           </p>
         </div>
       }
