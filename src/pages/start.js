@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link   } from 'react-router-dom';
 import { d6 } from '../util/dice'
-
+import { Store } from '../state/store'
 
 const Start = () => {
   const [die, setDie] = useState(null)
   const [yolo, setYolo] = useState(false)
+  const { dispatch } = useContext(Store);
+
+  const numberOfNames = (roll) => roll < 6 ? 1 : 6;
 
   return (
   <div className="bg-teal-500 h-screen w-screen p-6">
@@ -21,18 +24,28 @@ const Start = () => {
         </ul>
         <button
           className="px-8 text-3xl my-3"
-          onClick={ () => setDie(d6()) }
+          onClick={ () => {
+            setDie(d6())
+            dispatch({
+              type: "SET_NUMBER_NAMES",
+              number: numberOfNames(die)
+            })
+          }}
         >Roll</button>
       </div>
       :
       <div className="flex flex-col align-center">
-        <h1 className="text-center">You rolled a {yolo && "\""}{die}{yolo && "\""}, you have { die < 6 ? 1 : 6} Kojima-names.</h1>
+        <h1 className="text-center">You rolled a {yolo && "\""}{die}{yolo && "\""}, you have { numberOfNames(die) } Kojima-names.</h1>
         { die < 6 && 
           <button
             className="text-3xl my-3"
             onClick={() => {
               setDie(6);
               setYolo(true);
+              dispatch({
+                type: "SET_NUMBER_NAMES",
+                number: numberOfNames(die)
+              })
             }}
           >Fuck that, I totally have 6 names</button>
         }
@@ -41,11 +54,9 @@ const Start = () => {
         }
         <Link 
           className="flex justify-center text-3xl my-3"
-          to={{
-          pathname: `/worksheet/2`,
-          state: { roll: die }
-        }} >
-          <button >Let's do this</button>
+          to={`/worksheet/2?names=${numberOfNames(die)}`}
+        >
+          <button>Let's do this</button>
         </Link>
       </div>
     }

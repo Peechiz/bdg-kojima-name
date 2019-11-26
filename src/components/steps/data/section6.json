@@ -1,0 +1,24 @@
+{
+  "step": 6,
+  "heading": "Section 6: NORMAL NAME",
+  "subheading": "Kojima’s early work includes lots of characters that have names that are widely considered to be “normal.” Was this just because, in the early years, he didn’t have the power to say, “I’m Hideo Kojima, I can name someone Die­Hardman if I want to” without people questioning him? Probably.",
+  "data": [
+    {
+      "order": "1.",
+      "prompt": "Your answer from Section 2, Number 1 here. This is your full Kojima name:",
+      "type": "calc",
+      "lookup": [2,0]
+    },
+    {
+      "order": "2.",
+      "prompt": "Add the above to the conditions you accrued in Section 4",
+      "type": "calc",
+      "lookup": "conditions"
+    },
+    {
+      "order": "3.",
+      "prompt": "That’s your name. Your Kojima name is probably just your actual name. Sorry if you were expecting something wild.",
+      "type": "answer"
+    }
+  ]
+}

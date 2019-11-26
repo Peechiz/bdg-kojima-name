@@ -1,9 +1,10 @@
-import React, { createContext } from 'react'
+import React, { createContext, useEffect } from 'react'
 import { data } from '../components/steps/data'
 
 export const Store = createContext();
 
 const initialState = {
+  numberOfNames: null,
   sections: Object.keys(data)
     .map(key => data[key])
     .map(section => ({
@@ -16,29 +17,6 @@ const initialState = {
       }))
     }))
 }
-
-/*
-  {
-    sections: [
-      {
-        order: 2,
-        done: false,
-        answers: [
-          {
-            type: 'short',
-            roll: null,
-            answer: 'some text'
-          },
-          {
-            type: 'die',
-            roll: 6,
-            answer: 'some other text'
-          }
-        ]
-      }
-    ]
-    
-*/
 
 function reducer(state, action) {
   switch (action.type) {
@@ -69,13 +47,10 @@ function reducer(state, action) {
           return section;
         })
       }
-    case 'SIX_FUCKING_NAMES':
+    case 'SET_NUMBER_NAMES':
       return {
         ...state,
-        sections: state.sections.map(section => {
-          section.available = true;
-          return section;
-        })
+        numberOfNames: action.number
       }
     default:
       break;
@@ -83,11 +58,18 @@ function reducer(state, action) {
 }
 
 export const StoreProvider = (props) => {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
-  const value = { state, dispatch };
+
+  const localStore = JSON.parse(localStorage.getItem('kojimaStore'));
+
+  const [state, dispatch] = React.useReducer(reducer, localStore || initialState);
+
+  useEffect(()=> {
+    localStorage.setItem('kojimaStore', JSON.stringify(state))
+  }, [state])
+
   return (
-    <Store.Provider value={value}>
-      { console.log('state', state)}
+    <Store.Provider value={{state, dispatch}}>
+      {console.log('state', state)}
       {props.children}
     </Store.Provider>
   );
@@ -110,17 +92,3 @@ export const answerQuestionAction = ({ answer, section, dispatch, index }) => {
   }
   return dispatch(payload);
 }
-
-// export const toggleFavAction = (episode, state, dispatch) => {
-//   const episodeInFavourites = state.favourites.includes(episode);
-//   let dispatchObj = {
-//     type: 'ADD_FAV',
-//     payload: episode
-//   };
-//   if (episodeInFavourites)
-//     dispatchObj = {
-//       type: 'REMOVE_FAV',
-//       payload: state.favourites.filter(fav => fav.id !== episode.id)
-//     };
-//   return dispatch(dispatchObj);
-// };

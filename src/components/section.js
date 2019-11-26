@@ -7,7 +7,7 @@ import { Store } from '../state/store'
 
 const Section = (props) => {
   const { json, next, dice } = props;
-  const { state } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
   const sectionState = state.sections.find(s => s.order === json.step)
 
   return (
@@ -28,6 +28,7 @@ const Section = (props) => {
                 <DieRoller
                   {...props}
                   qID={index}
+                  dispatch={dispatch}
                   section={json.step}
                   prompt={q.prompt}
                   subPrompt={q.subPrompt}
